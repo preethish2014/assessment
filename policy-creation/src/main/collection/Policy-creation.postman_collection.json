@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "0df0193e-855f-4ca8-9393-510abb41297e",
+		"name": "Policy-creation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39964953"
+	},
+	"item": [
+		{
+			"name": "policy-creation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-header",
+						"value": "HEALTHPOLICY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Life Insurance\",\r\n  \"category\": \"Life\",\r\n  \"code\": \"HI12345\",\r\n  \"premium\": 2500.75\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/policy/creation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"policy",
+						"creation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policy-Validation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-header",
+						"value": "HEALTHPOLICY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": ,\r\n  \"category\": \"Life\",\r\n  \"code\": \"HI12345\",\r\n  \"premium\": 2500.75\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/policy/creation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"policy",
+						"creation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policy-creation exception",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-header",
+						"value": "HEALTH",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Life Insurance\",\r\n  \"category\": \"Life\",\r\n  \"code\": \"HI12345\",\r\n  \"premium\": 2500.75\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/policy/creation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"policy",
+						"creation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policy-Notification",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-header",
+						"value": "HEALTHPOLICY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Life Insurance\",\r\n  \"category\": \"Life\",\r\n  \"code\": \"HI12345\",\r\n  \"premium\": 2500.75\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/policy/notification",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"policy",
+						"notification"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
