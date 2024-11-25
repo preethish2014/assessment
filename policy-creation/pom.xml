@@ -122,7 +122,6 @@
                         <exclude>**/com/localstack/configuration/**</exclude>
                         <exclude>**/com/localstack/model/**</exclude>
                         <exclude>**/com/localstack/PolicyApplication.class</exclude>
-                        <exclude>**/com/localstack/dao/impl/**</exclude>
                     </excludes>
                 </configuration>
                 <executions>
