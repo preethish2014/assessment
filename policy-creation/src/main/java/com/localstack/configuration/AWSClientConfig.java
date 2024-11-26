@@ -13,7 +13,7 @@ public abstract class AWSClientConfig {
   @Value("${aws.credentials.secret-key}")
   protected String awsSecretKey;
 
-  @Value("${aws.region}")
+  @Value("${aws.region.static}")
   protected String awsRegion;
 
   protected AwsCredentialsProvider amazonAWSCredentialsProvider() {

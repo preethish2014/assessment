@@ -41,13 +41,8 @@ public class SavePolicyImpl implements SavePolicy {
     }
 
 
-
     public Policy upsert(Policy policyTbl) {
-       // if (Objects.isNull(policyTbl.getCode())) {
-            policyTable.putItem(policyTbl);
-     //   } else {
-       //     policyTable.updateItem(policyTbl);
-      //  }
+        policyTable.putItem(policyTbl);
         return policyTbl;
     }
 

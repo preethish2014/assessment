@@ -1,20 +1,7 @@
-spring:
-  cloud:
-    aws:
-      region:
-        static: us-east-1
-      credentials:
-        accessKey: test
-        secretKey: test
-      sqs:
-        endpoint: http://localhost:4566
-      sns:
-        endpoint: http://localhost:4566
-
-aws:
-  credentials:
-    access-key: test
-    secret-key: test
-  dynamodb:
-    endpoint: http://localhost.localstack.cloud:4566/
-  region: us-east-1
+spring.cloud.aws.dynamodb.endpoint: http://localhost.localstack.cloud:4566/
+spring.cloud.aws.sqs.endpoint: http://localhost:4566
+spring.cloud.aws.sns.endpoint: http://localhost:4566
+aws.region.static: us-east-1
+aws.credentials.access-key: test
+aws.credentials.secret-key: test
+aws.dynamodb.endpoint: http://localhost.localstack.cloud:4566/
