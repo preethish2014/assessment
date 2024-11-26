@@ -26,8 +26,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -57,16 +56,15 @@ class PolicySQSTemplateServiceImplTest {
         UUID messageId = UUID.randomUUID();
         GenericMessage<Object> message = new GenericMessage<>("Payload", new HashMap<>());
         NullPointerException mockedException = mock(NullPointerException.class);
+        when(objectMapper.writeValueAsString(Mockito.<Object>any())).thenReturn("42");
 
-        when(sqsTemplate.send(Mockito.<Consumer<SqsSendOptions<Object>>>any()))
-                .thenReturn(new SendResult<>(messageId, "https://config.us-east-2.amazonaws.com", message, new HashMap<>()));
+        if (exception) {
+            doThrow(mockedException).when(sqsTemplate).send(Mockito.<Consumer<SqsSendOptions<Object>>>any());
+        } else {
+            when(sqsTemplate.send(Mockito.<Consumer<SqsSendOptions<Object>>>any()))
+                    .thenReturn(new SendResult<>(messageId, "https://config.us-east-2.amazonaws.com", message, new HashMap<>()));
 
-        if (exception)
-            when(objectMapper.writeValueAsString(Mockito.<Object>any())).thenThrow(mockedException);
-        else
-            when(objectMapper.writeValueAsString(Mockito.<Object>any())).thenReturn("42");
-
-
+        }
         Policy policy = new Policy();
         policy.setCategory("Category");
         policy.setCode("Code");
